@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{authblk}
+
+\title{Allocazione Adattiva ed Equa di Risorse di Protezione Sociale in Contesti di Rischio Climatico: Un Approccio basato su CSP e Intelligenza Artificiale}
+\author[1]{Your Name}
+\author[2]{Coauthor Name}
+\affil[1]{Your Institution, Department, Email}
+\affil[2]{Coauthor Institution, Department, Email}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    Questo studio esplora il potenziale dell'intelligenza artificiale per affrontare il problema dell'allocazione di risorse di protezione sociale in contesti caratterizzati da rischio climatico dinamico. 
+    Integrando vincoli operativi, esigenze di equità, ed efficienza, proponiamo un modello basato su Soft CSP per ottimizzare decisioni complesse, adattandosi ai dati ambientali e socioeconomici in tempo reale.
+\end{abstract}
+
+\section{Introduction}
+
+Diversi documenti esaminano l'intersezione cruciale tra la protezione sociale (SP) e l'adattamento al cambiamento climatico (CCA), specialmente nel contesto della gestione delle vulnerabilità socioeconomiche e della sicurezza alimentare in paesi in via di sviluppo come il Brasile. 
+Le sfide poste dal cambiamento climatico includono l'aumento della frequenza e intensità di eventi meteorologici estremi, disastri e la degradazione degli ecosistemi, che a loro volta portano a povertà, insicurezza alimentare, perdita di beni e mezzi di sussistenza.
+
+\section{Background e Motivazione}
+I sistemi di protezione sociale sono identificati come uno strumento politico chiave per gestire i rischi derivanti dal cambiamento climatico, complementando le misure di risposta ai disastri, adattamento e mitigazione. 
+Tuttavia, l'integrazione strategica tra politiche SP e CCA risulta spesso frammentaria o assente.  quindi cruciale sviluppare approcci strutturati e basati sui dati per ottimizzare tali sistemi.
+
+\section{Problem Formulation}
+\textbf{Problema:} Come ottimizzare l'allocazione limitata di risorse di protezione sociale tra popolazioni vulnerabili geograficamente disperse, in modo che l'allocazione sia efficiente ed equa, tenendo conto dei rischi climatici dinamici e dei vincoli esistenti?
+
+Questa problematica è particolarmente adatta a essere modellata con tecniche di Constraint Satisfaction Problem (CSP) e Soft CSP, che consentono di formalizzare decisioni complesse soggette a vincoli e preferenze multiple.
+
+\section{Approccio Basato su CSP/Soft CSP}
+Un CSP è definito da:
+\begin{itemize}
+\item Variabili: decisioni di allocazione (es. risorse per regione e periodo).
+\item Domini: valori possibili (es. quantità, percentuali).
+\item Vincoli Hard: budget, capacità operative, idoneità.
+\item Vincoli Soft: equità, efficienza, rischio climatico.
+\end{itemize}
+
+Nel nostro contesto, proponiamo un \textit{Adaptive Soft CSP Framework} dove i vincoli e i dati cambiano nel tempo, e le soluzioni vengono aggiornate periodicamente in base a nuove informazioni.
+
+\section{Tecniche di Intelligenza Artificiale}
+\begin{itemize}
+\item \textbf{Problem Formulation AI:} modellazione di stati, azioni, transizioni.
+\item \textbf{CSP e Soft CSP:} struttura naturale per il problema.
+\item \textbf{Algoritmi di Ottimizzazione:} metaeuristiche (es. Simulated Annealing, Genetic Algorithms) per esplorare lo spazio delle soluzioni.
+\item \textbf{Agente Intelligente:} un sistema che percepisce, decide e agisce, aggiornando dinamicamente la soluzione.
+\end{itemize}
+
+\section{Benefici del Modello Proposto}
+\begin{itemize}
+\item Decisioni evidence-based
+\item Gestione della complessità
+\item Equità modellata esplicitamente
+\item Adattabilità a contesti dinamici
+\item Trasparenza nelle decisioni
+\item Simulazione di scenari politici e climatici
+\end{itemize}
+
+\section{Conclusioni}
+L'integrazione tra protezione sociale e adattamento climatico è essenziale per aumentare la resilienza delle popolazioni vulnerabili. 
+Un approccio AI basato su CSP/Soft CSP consente di sviluppare strumenti decisionali dinamici, equi ed efficienti.
+
+\bibliographystyle{plain}
+\bibliography{references}  % expects a references.bib file
+
+\end{document}

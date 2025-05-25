@@ -1,0 +1,101 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{enumitem}
+
+\title{\textbf{Allocazione Intelligente delle Risorse di Protezione Sociale in Contesti di Rischio Climatico Dinamico}}
+\author{Progetto basato su tecniche di Intelligenza Artificiale}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduzione}
+Basandosi sulle informazioni contenute nel documento \textit{"Paper.pdf"} e integrando concetti da altre fonti, questo progetto propone un metodo basato sull'Intelligenza Artificiale per affrontare la problematica dell'allocazione di risorse di protezione sociale in contesti colpiti da rischi climatici dinamici.
+
+\section*{Descrizione del Problema}
+Il problema fondamentale riguarda l'ottimizzazione dell'allocazione limitata di risorse di protezione sociale tra popolazioni vulnerabili disperse geograficamente. L'obiettivo è ottenere un'allocazione efficiente ed equa, tenendo conto di:
+
+\begin{itemize}
+    \item Rischi climatici dinamici (es. siccità, inondazioni).
+    \item Vincoli operativi e di bilancio.
+    \item Esigenze di equità e adattabilità.
+\end{itemize}
+
+Le sfide climatiche aggravano povertà e insicurezza alimentare, rendendo essenziale l'integrazione tra protezione sociale (SP) e adattamento al cambiamento climatico (CCA), spesso però frammentata.
+
+\section*{Modellazione del Problema}
+Il problema può essere modellato come un \textbf{Adaptive Soft Constraint Satisfaction Problem (Soft CSP)}, che permette di includere:
+
+\begin{itemize}
+    \item \textbf{Vincoli Hard:} budget, capacità logistiche, criteri di ammissibilità.
+    \item \textbf{Vincoli Soft:} equità, efficienza, priorità basate sul rischio climatico.
+\end{itemize}
+
+Questa formulazione consente una rappresentazione flessibile del problema e la possibilità di aggiornare dinamicamente i vincoli e i dati.
+
+\section*{Tecniche di Intelligenza Artificiale Utilizzate}
+
+\subsection*{1. Problem Formulation AI}
+Per modellare stati, azioni e transizioni nel processo decisionale.
+
+\subsection*{2. CSP e Soft CSP}
+Struttura naturale per formalizzare decisioni complesse con vincoli multipli. Soft CSP permette di modellare preferenze e priorità flessibili.
+
+\subsection*{3. Algoritmi di Ottimizzazione}
+Utilizzo di \textbf{metaeuristiche} come:
+\begin{itemize}
+    \item \textbf{Algoritmi Genetici (GA):} generazione e selezione evolutiva di soluzioni.
+    \item \textbf{Simulated Annealing (SA):} utile per evitare ottimi locali.
+\end{itemize}
+
+\subsection*{4. Agente Intelligente}
+Sistema autonomo che percepisce l’ambiente, aggiorna il modello, risolve il problema e agisce:
+
+\begin{itemize}
+    \item \textbf{Percezione:} acquisizione dati da fonti climatiche, socioeconomiche e sul campo.
+    \item \textbf{Aggiornamento:} adattamento dinamico del Soft CSP in base ai cambiamenti.
+    \item \textbf{Risoluzione:} ricerca di soluzioni ottimali o sub-ottimali.
+    \item \textbf{Azione:} emissione di decisioni di allocazione.
+\end{itemize}
+
+\section*{Progetto Applicativo Proposto}
+
+\textbf{Scenario:} Area geografica soggetta a rischi climatici ricorrenti (es. il Brasile semi-arido).
+
+\begin{itemize}
+    \item \textbf{Dominio:} Allocazione di risorse come aiuti alimentari, finanziari o rifugi temporanei.
+    \item \textbf{Modello:} Adaptive Soft CSP con:
+        \begin{itemize}
+            \item \textbf{Variabili:} decisioni di allocazione per comunità o famiglie.
+            \item \textbf{Domini:} valori interi, binari, continui.
+            \item \textbf{Vincoli Hard:} budget, trasporti, capacità logistiche.
+            \item \textbf{Vincoli Soft:} equità, efficienza, priorità basate su rischio e danno.
+        \end{itemize}
+    \item \textbf{Agente Intelligente:}
+        \begin{enumerate}[label=\alph*)]
+            \item \textbf{Percezione} di dati climatici, sociali ed economici.
+            \item \textbf{Aggiornamento del Modello} con vincoli e priorità modificabili.
+            \item \textbf{Risoluzione del CSP} con GA o SA.
+            \item \textbf{Azione} tramite raccomandazioni operative.
+        \end{enumerate}
+    \item \textbf{Equità:} metriche incorporate nei vincoli Soft e nelle funzioni obiettivo.
+    \item \textbf{Adattabilità:} aggiornamento continuo del modello per risposte in tempo reale.
+\end{itemize}
+
+\section*{Conclusioni}
+L’integrazione di tecniche di IA consente lo sviluppo di strumenti decisionali \textit{evidence-based}, adattivi, equi ed efficienti, cruciali per la gestione di risorse di protezione sociale in scenari climatici dinamici. Il sistema proposto offre:
+
+\begin{itemize}
+    \item Maggiore efficacia nella risposta.
+    \item Migliore trasparenza e tracciabilità.
+    \item Capacità di simulare scenari e supportare decisioni strategiche.
+\end{itemize}
+
+\end{document}
