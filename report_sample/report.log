@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.3)  24 MAY 2025 18:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.3)  25 MAY 2025 18:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/vincesamma/Desktop/unipd/first year/second semester/AI/project/sample/report.tex"
-(/Users/vincesamma/Desktop/unipd/first year/second semester/AI/project/sample/report.tex
+**"/Users/vincesamma/Desktop/unipd/first year/second semester/AI/project/AIProject/report_sample/report.tex"
+(/Users/vincesamma/Desktop/unipd/first year/second semester/AI/project/AIProject/report_sample/report.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -204,7 +204,7 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 39
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
-/Users/vincesamma/Desktop/unipd/first year/second semester/AI/project/sample/report.tex:74: LaTeX Error: File `framework' not found.
+/Users/vincesamma/Desktop/unipd/first year/second semester/AI/project/AIProject/report_sample/report.tex:74: LaTeX Error: File `framework' not found.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -234,12 +234,12 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
  ) 
 Here is how much of TeX's memory you used:
  3663 strings out of 474116
- 62568 string characters out of 5743683
+ 62619 string characters out of 5743683
  1938187 words of memory out of 5000000
  26017 multiletter control sequences out of 15000+600000
  567445 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,65p,633b,504s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,6n,65p,650b,504s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
 Output written on report.pdf (1 page, 35477 bytes).
 PDF statistics:
