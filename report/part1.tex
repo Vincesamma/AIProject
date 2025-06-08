@@ -1,0 +1,133 @@
+\begin{abstract}
+    This study explores the potential of artificial intelligence (AI) to
+    address the critical issue of allocating social protection (SP)
+    resources in contexts characterized by dynamic climate risk. By
+    integrating operational constraints, equity requirements, and
+    efficiency considerations, we propose a model based on the Soft
+    Constraint Satisfaction Problem (Soft CSP) to optimize complex
+    decision-making. The approach adapts to real-time environmental
+    and socioeconomic data and leverages metaheuristic optimization
+    algorithms and an intelligent agent to implement evidence-based
+    decisions. This framework aims to provide a robust
+    decision-making tool to enhance the resilience of vulnerable
+    populations in the face of increasing climate threats.
+\end{abstract}
+
+\section{Introduction}
+The intersection between social protection and \textbf{climate
+    change adaptation (CCA)} is a crucial topic, especially in the
+context of managing socioeconomic vulnerabilities and food security
+in developing countries. \textbf{Climate change (CC)} exacerbates
+existing challenges by increasing the frequency and intensity of
+extreme weather events, natural disasters, and ecosystem degradation.
+These phenomena lead to poverty, food insecurity, and the loss of
+assets and livelihoods for already vulnerable populations.
+
+Floods, for example, in addition to causing casualties, can
+facilitate the spread of diseases transmitted through contaminated
+water and insects, making the rapid distribution of aid and the
+relocation of affected populations essential. Similarly, the
+allocation of emergency resources such as temporary shelters is a
+central issue for emergency management professionals. However, this
+process is often complicated by a lack of attention to the
+socioeconomic needs of affected people, the vulnerability of
+temporary accommodations to potential new disaster impacts, and
+inefficiencies in public cost management.
+
+In this complex and dynamic scenario, social protection systems
+emerge as essential policy tools. However, the strategic integration
+between SP and CCA policies is often fragmented or absent, limiting
+the overall effectiveness of responses. It is therefore essential
+to develop structured, data-driven, and adaptive approaches to
+optimize the allocation of limited resources in an efficient and
+equitable way. Our project proposes the use of Artificial
+Intelligence to directly address this challenge.
+
+\section{Background and Motivation}
+Social protection systems are widely recognized as a key policy tool
+for managing risks associated with climate change. They can
+complement and reinforce disaster response, adaptation, and
+mitigation measures. For example, regular cash transfers can help
+reduce pressure on ecosystems by enabling poor and vulnerable
+households to lessen their overreliance on natural resources for
+their livelihoods. They can also be used to mitigate the negative
+impact of removing fossil fuel subsidies, as in the case of the
+"Bono Gas Hogar" in the Dominican Republic. However, cash transfers
+can also have complex environmental effects, not always positive,
+such as increased consumption of land-intensive goods in contexts
+with limited infrastructure and market access. This highlights the
+importance of understanding how populations experience climate
+risks in order to inform the design of social protection and
+complementary interventions, avoiding the risk of unintended
+negative impacts.
+
+Despite their potential, the conceptual and practical integration
+between SP and CCA remains limited. A review of official
+documentation in Brazil, for example, showed limited interaction
+between SP and food security (FS) issues in documents addressing
+climate change. The absence of references to FS or SP programs
+(such as PAA or Bolsa Família) in Brazil's main climate policy
+document (PNMC) has been interpreted as a sign of limited
+communication or lack of awareness about the importance of
+considering these areas jointly. The distinct human capacities and
+backgrounds within different ministries (SP, environment, science
+and technology) contribute to differing perspectives on the
+relative priority of specific issues.
+
+In this context, the need to develop structured and data-driven
+approaches to optimize SP systems is clear. The allocation of health
+resources, for instance, often relies on political decisions or the
+continuation of the status quo, leading to waste and loss of
+potential population health benefits. Health systems must operate
+efficiently and equitably to best serve the population. Similarly,
+in the context of natural disasters, the distribution of emergency
+relief has not always been adequately addressed in previous studies.
+The overall effectiveness and fairness of the distribution system
+are crucial to avoid overlooking critical but hard-to-reach areas.
+Optimization models, such as those used for allocating health
+resources or distributing post-disaster relief, can provide
+evidence-based recommendations, taking into account policy
+objectives, intervention interactions, real-world constraints, and
+budget limitations.
+
+The goal is to move from reactive and potentially inefficient or
+inequitable decisions to a proactive and adaptive system that uses
+available information (environmental, social, economic, logistical)
+to guide SP resource allocation decisions.
+
+\section{Problem Formulation}
+The fundamental problem our project aims to address is:
+\textbf{how can the limited allocation of social protection
+    resources be optimized across geographically dispersed vulnerable
+    populations, in a way that is both efficient and equitable, while
+    accounting for dynamic climate risks and existing constraints?}
+
+This problem is characterized by several key features that make it
+complex:
+\begin{itemize}
+    \item \textbf{Resource scarcity:} social protection resources
+          (such as food aid, cash transfers, temporary shelters, healthcare
+          services) are limited.
+    \item \textbf{Geographic dispersion:} vulnerable populations are
+          often spread across large areas, making logistics and
+          transportation critical elements. In flood relief contexts, the
+          speed of distribution and relocation is essential. The distance
+          between population clusters and shelters, or between central
+          warehouses and shelters, is a key factor in logistic optimization
+          models.
+    \item \textbf{Dynamic climate risks:} the intensity and location
+          of risks (droughts, floods, etc.) vary over time. The solution
+          approach must be able to adapt to these changes.
+    \item \textbf{Multiple objectives:} the goal is not only
+          efficiency (minimizing cost or time) but also equity in
+          allocation. Multi-objective models in relief distribution
+          typically consider economic goals (minimum cost), effectiveness
+          (minimum travel time), and fairness (maximum satisfaction).
+    \item \textbf{Complex constraints:} there are various practical
+          limitations, including available budgets, vehicle and shelter
+          capacities, and eligibility criteria for receiving resources.
+\end{itemize}
+
+Effectively addressing this problem requires a framework capable of
+accurately representing all these elements and finding satisfactory
+solutions even under conditions of uncertainty and change.
