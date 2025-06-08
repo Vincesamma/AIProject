@@ -1,19 +1,25 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[italian]{babel}
-\usepackage{geometry}
+\documentclass[letterpaper]{article}
+\usepackage[submission]{aaai25}
+\usepackage{mathptmx}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage[hyphens]{url}
 \usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{setspace}
-\usepackage{parskip}
+\urlstyle{rm}
+\def\UrlFont{\rm}
+\usepackage{natbib}
+\usepackage{caption}
+\usepackage{algorithm}
+\usepackage{algorithmic}
 
-\geometry{a4paper, margin=1in}
+\frenchspacing
+\setlength{\pdfpagewidth}{8.5in}
+\setlength{\pdfpageheight}{11in}
 
 \title{Allocazione Adattiva ed Equa di Risorse di Protezione Sociale in Contesti di Rischio Climatico Dinamico: Un Approccio basato su CSP e Intelligenza Artificiale}
 \author{}
 \date{}
+\affiliations{}
 
 \begin{document}
 
@@ -61,18 +67,18 @@ Nel contesto dell'allocazione delle risorse di protezione sociale:
     \item \textbf{Variabili:} Le variabili del problema rappresentano le decisioni di allocazione delle risorse. Ad esempio, potrebbero indicare quali comunità o famiglie ricevono quali tipi e quantità di risorse, o quali rifugi temporanei vengono aperti e con quale capacità. Queste variabili possono assumere valori interi (es. numero di kit di soccorso), binari (es. un rifugio è aperto/chiuso), o continui (es. quantità di aiuto finanziario).
     \item \textbf{Domini:} I domini definiscono l'insieme dei possibili valori che ciascuna variabile può assumere.
     \item \textbf{Vincoli Hard:} Questi sono i vincoli che devono essere rispettati per avere una soluzione valida. Includono:
-    \begin{itemize}
-        \item \textbf{Vincoli di Budget:} L'allocazione totale non può superare il budget disponibile per ciascun tipo di risorsa. Esempi di costi in operazioni di soccorso includono costi di apertura rifugi, costi di trasporto (per veicolo e per km), e costi di penalità per mancata evacuazione o mancata fornitura di soccorsi.
-        \item \textbf{Vincoli Logistici e di Capacità:} Le risorse allocate a una località non possono superare la sua capacità di ricezione (es. capacità dei rifugi). La quantità totale di risorse distribuite non può superare la disponibilità nei depositi. La capacità dei veicoli utilizzati per il trasporto (in peso o volume) è un altro vincolo logistico.
-        \item \textbf{Criteri di Ammissibilità:} Solo le popolazioni che soddisfano determinati criteri socioeconomici o di vulnerabilità possono ricevere determinate risorse.
-    \end{itemize}
+          \begin{itemize}
+              \item \textbf{Vincoli di Budget:} L'allocazione totale non può superare il budget disponibile per ciascun tipo di risorsa. Esempi di costi in operazioni di soccorso includono costi di apertura rifugi, costi di trasporto (per veicolo e per km), e costi di penalità per mancata evacuazione o mancata fornitura di soccorsi.
+              \item \textbf{Vincoli Logistici e di Capacità:} Le risorse allocate a una località non possono superare la sua capacità di ricezione (es. capacità dei rifugi). La quantità totale di risorse distribuite non può superare la disponibilità nei depositi. La capacità dei veicoli utilizzati per il trasporto (in peso o volume) è un altro vincolo logistico.
+              \item \textbf{Criteri di Ammissibilità:} Solo le popolazioni che soddisfano determinati criteri socioeconomici o di vulnerabilità possono ricevere determinate risorse.
+          \end{itemize}
     \item \textbf{Vincoli Soft:} Questi vincoli riflettono gli obiettivi preferenziali del sistema e contribuiscono a definire l'ottimalità della soluzione. Includono:
-    \begin{itemize}
-        \item \textbf{Equità nell'Allocazione e negli Outcomes:} Garantire una distribuzione giusta delle risorse, tenendo conto delle diverse vulnerabilità e bisogni. Le metriche di equità possono essere incorporate esplicitamente. Studi sulla fairness nell'allocazione delle risorse critiche evidenziano l'importanza di considerare l'equità sia nell'allocazione (chi riceve cosa) sia negli outcomes (l'impatto della risorsa). Notabilmente, la fairness nell'allocazione e la fairness negli outcomes sono spesso incompatibili.
-        \item \textbf{Efficienza:} Minimizzare i costi operativi (trasporto, gestione) e i tempi di consegna delle risorse. L'efficienza può essere misurata in termini di costo totale minimo o tempo di viaggio totale minimo.
-        \item \textbf{Priorità basate sul Rischio e sul Danno:} Dare priorità alle aree o alle popolazioni più colpite o a maggior rischio in base agli eventi climatici in corso. L'identificazione delle aree prioritarie può basarsi su parametri socioeconomici, demografici e ambientali.
-        \item \textbf{Massimizzazione della Soddisfazione:} Nei modelli multi-obiettivo per la distribuzione dei soccorsi, un obiettivo è massimizzare il livello minimo di soddisfazione tra i punti di domanda per ciascun articolo.
-    \end{itemize}
+          \begin{itemize}
+              \item \textbf{Equità nell'Allocazione e negli Outcomes:} Garantire una distribuzione giusta delle risorse, tenendo conto delle diverse vulnerabilità e bisogni. Le metriche di equità possono essere incorporate esplicitamente. Studi sulla fairness nell'allocazione delle risorse critiche evidenziano l'importanza di considerare l'equità sia nell'allocazione (chi riceve cosa) sia negli outcomes (l'impatto della risorsa). Notabilmente, la fairness nell'allocazione e la fairness negli outcomes sono spesso incompatibili.
+              \item \textbf{Efficienza:} Minimizzare i costi operativi (trasporto, gestione) e i tempi di consegna delle risorse. L'efficienza può essere misurata in termini di costo totale minimo o tempo di viaggio totale minimo.
+              \item \textbf{Priorità basate sul Rischio e sul Danno:} Dare priorità alle aree o alle popolazioni più colpite o a maggior rischio in base agli eventi climatici in corso. L'identificazione delle aree prioritarie può basarsi su parametri socioeconomici, demografici e ambientali.
+              \item \textbf{Massimizzazione della Soddisfazione:} Nei modelli multi-obiettivo per la distribuzione dei soccorsi, un obiettivo è massimizzare il livello minimo di soddisfazione tra i punti di domanda per ciascun articolo.
+          \end{itemize}
 \end{itemize}
 
 La formulazione Soft CSP permette di bilanciare questi vincoli e obiettivi, trovando soluzioni che siano valide (rispettando i vincoli Hard) e che ottimizzino il grado di soddisfazione dei vincoli Soft (massimizzando efficienza ed equità, tenendo conto delle priorità).
@@ -82,24 +88,24 @@ Per risolvere l'Adaptive Soft CSP e implementare il sistema decisionale, proponi
 
 \begin{enumerate}
     \item \textbf{Problem Formulation AI:} Questa fase iniziale consiste nel modellare formalmente il problema in termini di stati, azioni e transizioni. Ad esempio, uno stato potrebbe rappresentare una configurazione attuale delle risorse allocate e delle condizioni climatiche; un'azione potrebbe essere una specifica decisione di allocazione (es. inviare N unità di aiuto alimentare alla comunità X); una transizione descrive come un'azione modifica lo stato attuale. Questo processo è fondamentale per strutturare il problema per le tecniche di risoluzione successive.
-    
+
     \item \textbf{CSP e Soft CSP:} Come discusso, il Soft CSP è la struttura naturale scelta per formalizzare le decisioni complesse con vincoli multipli e priorità flessibili. La sua capacità di gestire la flessibilità la rende particolarmente adatta a problemi del mondo reale dove non tutti i vincoli sono rigidi.
-    
+
     \item \textbf{Algoritmi di Ottimizzazione (Metaeuristiche):} Trovare la soluzione ottimale in un Soft CSP, specialmente di grandi dimensioni e con dati che cambiano dinamicamente, è un problema computazionalmente difficile. Le metaeuristiche sono algoritmi di ricerca che esplorano lo spazio delle soluzioni in modo efficiente. Proponiamo l'uso di:
-    \begin{itemize}
-        \item \textbf{Algoritmi Genetici (GA):} Ispirati all'evoluzione naturale, i GA lavorano con una ``popolazione'' di soluzioni candidate, rappresentate come stringhe (spesso binarie). Le nuove generazioni vengono prodotte tramite selezione, crossover e mutazione. Ogni stato è associato a un valore (fitness function) che misura la sua qualità rispetto agli obiettivi. I GA sono stati applicati con successo a problemi di ottimizzazione nella distribuzione di soccorsi, come l'allocazione di rifugi e la distribuzione di materiali.
-        \item \textbf{Simulated Annealing (SA):} Questa metaeuristica si ispira al processo di ricottura dei metalli. Permette di ``saltare'' fuori dagli ottimi locali accettando occasionalmente mosse che peggiorano la soluzione, con una frequenza che diminuisce gradualmente nel tempo (``temperatura''). È dimostrato che, se la ``temperatura'' diminuisce abbastanza lentamente, SA può trovare un ottimo globale.
-    \end{itemize}
-    L'uso di GA o SA o una combinazione di metaeuristiche consente di esplorare efficacemente lo spazio delle soluzioni del Soft CSP per trovare soluzioni ottimali o sub-ottimali, anche in problemi complessi dove i metodi esatti potrebbero essere troppo lenti o impraticabili. Altre metaeuristiche, come la ricerca locale a fascio (local beam search) o gli algoritmi Bees, sono state impiegate in problemi simili di ottimizzazione per la distribuzione di soccorsi o l'assegnazione generalizzata.
-    
+          \begin{itemize}
+              \item \textbf{Algoritmi Genetici (GA):} Ispirati all'evoluzione naturale, i GA lavorano con una ``popolazione'' di soluzioni candidate, rappresentate come stringhe (spesso binarie). Le nuove generazioni vengono prodotte tramite selezione, crossover e mutazione. Ogni stato è associato a un valore (fitness function) che misura la sua qualità rispetto agli obiettivi. I GA sono stati applicati con successo a problemi di ottimizzazione nella distribuzione di soccorsi, come l'allocazione di rifugi e la distribuzione di materiali.
+              \item \textbf{Simulated Annealing (SA):} Questa metaeuristica si ispira al processo di ricottura dei metalli. Permette di ``saltare'' fuori dagli ottimi locali accettando occasionalmente mosse che peggiorano la soluzione, con una frequenza che diminuisce gradualmente nel tempo (``temperatura''). È dimostrato che, se la ``temperatura'' diminuisce abbastanza lentamente, SA può trovare un ottimo globale.
+          \end{itemize}
+          L'uso di GA o SA o una combinazione di metaeuristiche consente di esplorare efficacemente lo spazio delle soluzioni del Soft CSP per trovare soluzioni ottimali o sub-ottimali, anche in problemi complessi dove i metodi esatti potrebbero essere troppo lenti o impraticabili. Altre metaeuristiche, come la ricerca locale a fascio (local beam search) o gli algoritmi Bees, sono state impiegate in problemi simili di ottimizzazione per la distribuzione di soccorsi o l'assegnazione generalizzata.
+
     \item \textbf{Agente Intelligente:} Per integrare le tecniche sopra menzionate e interagire con l'ambiente dinamico, il framework si basa su un Agente Intelligente. Un agente intelligente è un sistema che percepisce il suo ambiente, prende decisioni e agisce per raggiungere i suoi obiettivi. Nel nostro contesto, l'agente:
-    \begin{itemize}
-        \item \textbf{Percepisce:} Acquisisce dati da diverse fonti, tra cui dati climatici (previsioni, eventi in corso), dati socioeconomici (vulnerabilità delle popolazioni, bisogni attuali) e dati sul campo (condizioni logistiche, capacità dei rifugi). La raccolta dati in contesti di emergenza include informazioni socioeconomiche per le aree colpite e matrici di distanza. I dati sui parametri per l'identificazione delle aree prioritarie includono popolazione, area, reddito pro capite, valore delle proprietà e fattori come drenaggio, urbanizzazione e servizi civici. Le matrici di distanza possono essere formate utilizzando mappe scalabili o sistemi GIS.
-        \item \textbf{Aggiorna:} Adatta dinamicamente il modello Soft CSP in base ai cambiamenti nelle condizioni percepite. Se una nuova allerta meteo o una valutazione dei danni post-evento indicano un aumento del rischio in una certa area, i vincoli Soft (es. priorità) vengono modificati. Se la disponibilità di risorse o la capacità logistica cambiano, i vincoli Hard vengono aggiornati.
-        \item \textbf{Risolve:} Utilizza gli algoritmi di ottimizzazione (GA/SA) per trovare la soluzione ottimale o sub-ottimale per il Soft CSP aggiornato.
-        \item \textbf{Agisce:} Emette le decisioni di allocazione delle risorse sotto forma di raccomandazioni operative. Queste decisioni guidano l'invio di aiuti, l'apertura di rifugi, l'assegnazione di trasferimenti di denaro, ecc.
-    \end{itemize}
-    L'architettura dell'agente include abilità, conoscenze pregresse, obiettivi, stimoli (correnti e passati), e uno stato di credenza utilizzato per scegliere le azioni. La trasduzione, che mappa i percetti ai comandi, può essere implementata da un controller. Un approccio gerarchico ai controller può rendere il sistema più veloce. L'agente mantiene uno stato di credenza che codifica la storia dei percetti.
+          \begin{itemize}
+              \item \textbf{Percepisce:} Acquisisce dati da diverse fonti, tra cui dati climatici (previsioni, eventi in corso), dati socioeconomici (vulnerabilità delle popolazioni, bisogni attuali) e dati sul campo (condizioni logistiche, capacità dei rifugi). La raccolta dati in contesti di emergenza include informazioni socioeconomiche per le aree colpite e matrici di distanza. I dati sui parametri per l'identificazione delle aree prioritarie includono popolazione, area, reddito pro capite, valore delle proprietà e fattori come drenaggio, urbanizzazione e servizi civici. Le matrici di distanza possono essere formate utilizzando mappe scalabili o sistemi GIS.
+              \item \textbf{Aggiorna:} Adatta dinamicamente il modello Soft CSP in base ai cambiamenti nelle condizioni percepite. Se una nuova allerta meteo o una valutazione dei danni post-evento indicano un aumento del rischio in una certa area, i vincoli Soft (es. priorità) vengono modificati. Se la disponibilità di risorse o la capacità logistica cambiano, i vincoli Hard vengono aggiornati.
+              \item \textbf{Risolve:} Utilizza gli algoritmi di ottimizzazione (GA/SA) per trovare la soluzione ottimale o sub-ottimale per il Soft CSP aggiornato.
+              \item \textbf{Agisce:} Emette le decisioni di allocazione delle risorse sotto forma di raccomandazioni operative. Queste decisioni guidano l'invio di aiuti, l'apertura di rifugi, l'assegnazione di trasferimenti di denaro, ecc.
+          \end{itemize}
+          L'architettura dell'agente include abilità, conoscenze pregresse, obiettivi, stimoli (correnti e passati), e uno stato di credenza utilizzato per scegliere le azioni. La trasduzione, che mappa i percetti ai comandi, può essere implementata da un controller. Un approccio gerarchico ai controller può rendere il sistema più veloce. L'agente mantiene uno stato di credenza che codifica la storia dei percetti.
 \end{enumerate}
 
 \section{Progetto Applicativo Proposto: Scenario nel Semi-arido Brasiliano}
@@ -107,23 +113,23 @@ Per illustrare l'applicazione di questo framework, proponiamo uno scenario basat
 
 \begin{itemize}
     \item \textbf{Dominio:} L'applicazione si concentra sull'allocazione di risorse di protezione sociale specifiche per questo contesto, come aiuti alimentari (kit, accesso a cibo attraverso programmi come PAA e PNAE), trasferimenti finanziari (come il Programma Bolsa Família, menzionato nelle referenze), e rifugi temporanei in caso di eventi estremi.
-    
+
     \item \textbf{Modello:} Viene sviluppato un Adaptive Soft CSP per questo dominio.
-    \begin{itemize}
-        \item \textbf{Variabili:} Le decisioni potrebbero includere: quale percentuale della popolazione idonea in ciascun comune riceve un trasferimento di denaro, quante tonnellate di cibo vengono inviate a ciascun centro di distribuzione, o quali scuole fungono da rifugi temporanei e con quale capacità.
-        \item \textbf{Domini:} I domini delle variabili dipenderanno dal tipo di risorsa (quantità, binario per apertura/chiusura rifugio, ecc.).
-        \item \textbf{Vincoli Hard:} Budget totale disponibile per i programmi SP. Capacità di stoccaggio e distribuzione dei centri logistici. Capacità massima dei rifugi temporanei. Disponibilità di veicoli e limiti sulla quantità trasportabile. Criteri di ammissibilità per l'accesso ai programmi (es. livello di reddito, esposizione al rischio).
-        \item \textbf{Vincoli Soft:} Equità nella distribuzione delle risorse tra le diverse comunità (es. minimizzare le differenze nel livello di supporto pro-capite, o garantire che le aree più povere ricevano un supporto proporzionale alla loro vulnerabilità). Efficienza logistica (es. minimizzare i costi di trasporto totale, o il tempo totale per raggiungere le popolazioni più vulnerabili). Priorità basate sul rischio attuale e previsto di siccità o inondazioni. Queste priorità possono basarsi sulla probabilità degli eventi climatici e sulla vulnerabilità socioeconomica delle diverse aree.
-    \end{itemize}
-    
+          \begin{itemize}
+              \item \textbf{Variabili:} Le decisioni potrebbero includere: quale percentuale della popolazione idonea in ciascun comune riceve un trasferimento di denaro, quante tonnellate di cibo vengono inviate a ciascun centro di distribuzione, o quali scuole fungono da rifugi temporanei e con quale capacità.
+              \item \textbf{Domini:} I domini delle variabili dipenderanno dal tipo di risorsa (quantità, binario per apertura/chiusura rifugio, ecc.).
+              \item \textbf{Vincoli Hard:} Budget totale disponibile per i programmi SP. Capacità di stoccaggio e distribuzione dei centri logistici. Capacità massima dei rifugi temporanei. Disponibilità di veicoli e limiti sulla quantità trasportabile. Criteri di ammissibilità per l'accesso ai programmi (es. livello di reddito, esposizione al rischio).
+              \item \textbf{Vincoli Soft:} Equità nella distribuzione delle risorse tra le diverse comunità (es. minimizzare le differenze nel livello di supporto pro-capite, o garantire che le aree più povere ricevano un supporto proporzionale alla loro vulnerabilità). Efficienza logistica (es. minimizzare i costi di trasporto totale, o il tempo totale per raggiungere le popolazioni più vulnerabili). Priorità basate sul rischio attuale e previsto di siccità o inondazioni. Queste priorità possono basarsi sulla probabilità degli eventi climatici e sulla vulnerabilità socioeconomica delle diverse aree.
+          \end{itemize}
+
     \item \textbf{Agente Intelligente:} Un agente monitora continuamente l'ambiente.
-    \begin{itemize}
-        \item \textbf{Percezione:} Raccoglie dati sulle previsioni climatiche (es. probabilità di siccità nei prossimi mesi, intensità delle piogge previste), dati socioeconomici (es. indici di povertà aggiornati a livello locale, prezzi del cibo sui mercati locali, dati sull'occupazione), e dati logistici in tempo reale (es. condizioni delle strade, disponibilità di veicoli, stato degli stock nei depositi). La percezione continua è fondamentale data la natura dinamica del rischio climatico.
-        \item \textbf{Aggiornamento:} In base ai dati percepiti, l'agente aggiorna il Soft CSP. Ad esempio, un peggioramento delle previsioni di siccità in una micro-regione potrebbe aumentare la priorità (vincolo Soft) per l'invio di aiuti alimentari in quell'area. Un aumento inaspettato dei costi del carburante potrebbe influenzare i vincoli Hard e Soft relativi ai costi di trasporto.
-        \item \textbf{Risoluzione:} L'agente esegue gli algoritmi di ottimizzazione (GA o SA) per trovare la migliore allocazione di risorse dato il Soft CSP aggiornato.
-        \item \textbf{Azione:} Genera raccomandazioni operative specifiche, come ``Allocare X unità di risorsa Y alla comunità Z, utilizzando il percorso logistico W''.
-    \end{itemize}
-    
+          \begin{itemize}
+              \item \textbf{Percezione:} Raccoglie dati sulle previsioni climatiche (es. probabilità di siccità nei prossimi mesi, intensità delle piogge previste), dati socioeconomici (es. indici di povertà aggiornati a livello locale, prezzi del cibo sui mercati locali, dati sull'occupazione), e dati logistici in tempo reale (es. condizioni delle strade, disponibilità di veicoli, stato degli stock nei depositi). La percezione continua è fondamentale data la natura dinamica del rischio climatico.
+              \item \textbf{Aggiornamento:} In base ai dati percepiti, l'agente aggiorna il Soft CSP. Ad esempio, un peggioramento delle previsioni di siccità in una micro-regione potrebbe aumentare la priorità (vincolo Soft) per l'invio di aiuti alimentari in quell'area. Un aumento inaspettato dei costi del carburante potrebbe influenzare i vincoli Hard e Soft relativi ai costi di trasporto.
+              \item \textbf{Risoluzione:} L'agente esegue gli algoritmi di ottimizzazione (GA o SA) per trovare la migliore allocazione di risorse dato il Soft CSP aggiornato.
+              \item \textbf{Azione:} Genera raccomandazioni operative specifiche, come ``Allocare X unità di risorsa Y alla comunità Z, utilizzando il percorso logistico W''.
+          \end{itemize}
+
     \item \textbf{Equità e Adattabilità:} L'equità è esplicitamente modellata nei vincoli Soft e nelle funzioni obiettivo del CSP. L'adattabilità è garantita dall'aggiornamento continuo del modello in base ai dati percepiti e dalla risoluzione periodica del CSP, consentendo risposte rapide e informate ai cambiamenti nel rischio e nei bisogni. La capacità di adattare i programmi SP alla variabilità climatica e ai cicli produttivi è considerata un progresso importante.
 \end{itemize}
 
