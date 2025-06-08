@@ -11,6 +11,7 @@
 \usepackage{caption}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage{cite}
 
 \frenchspacing
 \setlength{\pdfpagewidth}{8.5in}
@@ -25,7 +26,241 @@
 
 \maketitle
 
-\input{part1}
+\begin{abstract}
+    This study explores the potential of artificial intelligence (AI) to
+    address the critical issue of allocating social protection (SP)
+    resources in contexts characterized by dynamic climate risk. By
+    integrating operational constraints, equity requirements, and
+    efficiency considerations, we propose a model based on the Soft
+    Constraint Satisfaction Problem (Soft CSP) to optimize complex
+    decision-making. The approach adapts to real-time environmental
+    and socioeconomic data and leverages metaheuristic optimization
+    algorithms and an intelligent agent to implement evidence-based
+    decisions. This framework aims to provide a robust
+    decision-making tool to enhance the resilience of vulnerable
+    populations in the face of increasing climate threats.
 
-\input{part2}
+\end{abstract}
+
+\section{Introduction}
+The intersection between social protection and \textbf{climate
+    change adaptation (CCA)} is a crucial topic, especially in the
+context of managing socioeconomic vulnerabilities and food security
+in developing countries. \textbf{Climate change (CC)} exacerbates
+existing challenges by increasing the frequency and intensity of
+extreme weather events, natural disasters, and ecosystem degradation.
+These phenomena lead to poverty, food insecurity, and the loss of
+assets and livelihoods for already vulnerable populations.
+\cite{bagolle2023social}
+
+Floods, for example, in addition to causing casualties, can
+facilitate the spread of diseases transmitted through contaminated
+water and insects, making the rapid distribution of aid and the
+relocation of affected populations essential. Similarly, the
+allocation of emergency resources such as temporary shelters is a
+central issue for emergency management professionals. However, this
+process is often complicated by a lack of attention to the
+socioeconomic needs of affected people, the vulnerability of
+temporary accommodations to potential new disaster impacts, and
+inefficiencies in public cost management.
+
+In this complex and dynamic scenario, social protection systems
+emerge as essential policy tools. However, the strategic integration
+between SP and CCA policies is often fragmented or absent, limiting
+the overall effectiveness of responses. It is therefore essential
+to develop structured, data-driven, and adaptive approaches to
+optimize the allocation of limited resources in an efficient and
+equitable way. Our project proposes the use of Artificial
+Intelligence to directly address this challenge.
+
+\section{Background and Motivation}
+Social protection systems are widely recognized as a key policy tool
+for managing risks associated with climate change. They can
+complement and reinforce disaster response, adaptation, and
+mitigation measures. For example, regular cash transfers can help
+reduce pressure on ecosystems by enabling poor and vulnerable
+households to lessen their overreliance on natural resources for
+their livelihoods. They can also be used to mitigate the negative
+impact of removing fossil fuel subsidies, as in the case of the
+"Bono Gas Hogar" in the Dominican Republic. However, cash transfers
+can also have complex environmental effects, not always positive,
+such as increased consumption of land-intensive goods in contexts
+with limited infrastructure and market access. This highlights the
+importance of understanding how populations experience climate
+risks in order to inform the design of social protection and
+complementary interventions, avoiding the risk of unintended
+negative impacts.
+
+Despite their potential, the conceptual and practical integration
+between SP and CCA remains limited. A review of official
+documentation in Brazil, for example, showed limited interaction
+between SP and food security (FS) issues in documents addressing
+climate change. The absence of references to FS or SP programs
+(such as PAA or Bolsa Família) in Brazil's main climate policy
+document (PNMC) has been interpreted as a sign of limited
+communication or lack of awareness about the importance of
+considering these areas jointly. The distinct human capacities and
+backgrounds within different ministries (SP, environment, science
+and technology) contribute to differing perspectives on the
+relative priority of specific issues.
+
+In this context, the need to develop structured and data-driven
+approaches to optimize SP systems is clear. The allocation of health
+resources, for instance, often relies on political decisions or the
+continuation of the status quo, leading to waste and loss of
+potential population health benefits. Health systems must operate
+efficiently and equitably to best serve the population. Similarly,
+in the context of natural disasters, the distribution of emergency
+relief has not always been adequately addressed in previous studies.
+The overall effectiveness and fairness of the distribution system
+are crucial to avoid overlooking critical but hard-to-reach areas.
+Optimization models, such as those used for allocating health
+resources or distributing post-disaster relief, can provide
+evidence-based recommendations, taking into account policy
+objectives, intervention interactions, real-world constraints, and
+budget limitations.
+
+The goal is to move from reactive and potentially inefficient or
+inequitable decisions to a proactive and adaptive system that uses
+available information (environmental, social, economic, logistical)
+to guide SP resource allocation decisions.
+
+\section{Problem Formulation}
+The fundamental problem our project aims to address is:
+\textbf{how can the limited allocation of social protection
+    resources be optimized across geographically dispersed vulnerable
+    populations, in a way that is both efficient and equitable, while
+    accounting for dynamic climate risks and existing constraints?}
+
+This problem is characterized by several key features that make it
+complex:
+\begin{itemize}
+    \item \textbf{Resource scarcity:} social protection resources
+          (such as food aid, cash transfers, temporary shelters, healthcare
+          services) are limited.
+    \item \textbf{Geographic dispersion:} vulnerable populations are
+          often spread across large areas, making logistics and
+          transportation critical elements. In flood relief contexts, the
+          speed of distribution and relocation is essential. The distance
+          between population clusters and shelters, or between central
+          warehouses and shelters, is a key factor in logistic optimization
+          models.
+    \item \textbf{Dynamic climate risks:} the intensity and location
+          of risks (droughts, floods, etc.) vary over time. The solution
+          approach must be able to adapt to these changes.
+    \item \textbf{Multiple objectives:} the goal is not only
+          efficiency (minimizing cost or time) but also equity in
+          allocation. Multi-objective models in relief distribution
+          typically consider economic goals (minimum cost), effectiveness
+          (minimum travel time), and fairness (maximum satisfaction).
+    \item \textbf{Complex constraints:} there are various practical
+          limitations, including available budgets, vehicle and shelter
+          capacities, and eligibility criteria for receiving resources.
+\end{itemize}
+
+Effectively addressing this problem requires a framework capable of
+accurately representing all these elements and finding satisfactory
+solutions even under conditions of uncertainty and change.
+
+\section{Problem Modeling}
+To formally represent this problem, we propose the use of an \textbf{Adaptive Soft Constraint Satisfaction Problem (Soft CSP)}. This formulation is particularly suitable because it allows the management not only of hard constraints (which must be satisfied in all cases) but also of preferences or flexible constraints (which the system seeks to satisfy as much as possible). Moreover, the framework is “adaptive” since it allows constraints and data to change over time, with solutions being periodically updated based on newly perceived information.
+
+In the context of social protection resource allocation:
+\begin{itemize}
+    \item \textbf{Variables:} The variables of the problem represent resource allocation decisions. For instance, they may indicate which communities or households receive which types and quantities of resources, or which temporary shelters are opened and with what capacity. These variables may assume integer values (e.g., number of relief kits), binary values (e.g., a shelter is open/closed), or continuous values (e.g., amount of financial aid).
+
+    \item \textbf{Domains:} The domains define the set of possible values that each variable can take.
+
+    \item \textbf{Hard Constraints:} These are the constraints that must be respected in order to obtain a valid solution. They include:
+          \begin{itemize}
+              \item \textbf{Budget Constraints:} The total allocation cannot exceed the available budget for each type of resource. Examples of costs in relief operations include shelter opening costs, transportation costs (per vehicle and per kilometer), and penalty costs for failed evacuation or unmet relief supply.
+              \item \textbf{Logistical and Capacity Constraints:} The resources allocated to a location cannot exceed its reception capacity (e.g., shelter capacity). The total amount of distributed resources cannot exceed the stock available in warehouses. Vehicle capacities (in terms of weight or volume) used for transportation are another type of logistical constraint.
+              \item \textbf{Eligibility Criteria:} Only populations that meet certain socioeconomic or vulnerability criteria may receive specific resources.
+          \end{itemize}
+
+    \item \textbf{Soft Constraints:} These constraints reflect the system’s preferential goals and contribute to defining the optimality of a solution. They include:
+          \begin{itemize}
+              \item \textbf{Fairness in Allocation and Outcomes:} Ensuring a fair distribution of resources, considering varying vulnerabilities and needs. Fairness metrics can be explicitly incorporated. Studies on fairness in critical resource allocation emphasize the importance of considering both allocation fairness (who receives what) and outcome fairness (the impact of the resource). Notably, fairness in allocation and fairness in outcomes are often incompatible.
+              \item \textbf{Efficiency:} Minimizing operational costs (transport, logistics) and resource delivery times. Efficiency can be measured in terms of minimal total cost or minimal total travel time.
+              \item \textbf{Risk and Impact-based Prioritization:} Giving priority to areas or populations most affected or at highest risk due to ongoing climate events. The identification of priority areas can be based on socioeconomic, demographic, and environmental parameters.
+              \item \textbf{Satisfaction Maximization:} In multi-objective relief distribution models, one objective is to maximize the minimum satisfaction level among demand points for each item.
+          \end{itemize}
+\end{itemize}
+
+The Soft CSP formulation enables balancing these constraints and objectives, finding solutions that are valid (respecting hard constraints) while optimizing the satisfaction degree of soft constraints (maximizing efficiency and fairness while accounting for priorities).
+
+\section{Artificial Intelligence Techniques Employed}
+To solve the Adaptive Soft CSP and implement the decision-making system, we propose the integration of various Artificial Intelligence techniques:
+
+\begin{enumerate}
+    \item \textbf{Problem Formulation AI:} This initial phase involves formally modeling the problem in terms of states, actions, and transitions. For instance, a state may represent a current configuration of allocated resources and climate conditions; an action could be a specific allocation decision (e.g., sending $N$ units of food aid to community $X$); a transition describes how an action modifies the current state. This process is essential to structure the problem for the subsequent resolution techniques.
+
+    \item \textbf{CSP and Soft CSP:} As discussed, the Soft CSP is the natural structure chosen to formalize complex decisions with multiple constraints and flexible priorities. Its ability to handle flexibility makes it particularly suitable for real-world problems where not all constraints are rigid.
+
+    \item \textbf{Optimization Algorithms (Metaheuristics):} Finding the optimal solution to a Soft CSP, especially in large-scale instances with dynamically changing data, is a computationally difficult problem. Metaheuristics are search algorithms that explore the solution space efficiently. We propose the use of:
+          \begin{itemize}
+              \item \textbf{Genetic Algorithms (GA):} Inspired by natural evolution, GAs operate on a “population” of candidate solutions represented as strings (often binary). New generations are produced through selection, crossover, and mutation. Each state is associated with a value (fitness function) that measures its quality with respect to the objectives. GAs have been successfully applied to optimization problems in relief distribution, such as shelter allocation and materials distribution.
+              \item \textbf{Simulated Annealing (SA):} This metaheuristic is inspired by the annealing process in metallurgy. It allows “escaping” local optima by occasionally accepting worse solutions, with a frequency that gradually decreases over time (the “temperature”). It is proven that, if the temperature decreases slowly enough, SA can find a global optimum.
+          \end{itemize}
+          The use of GA, SA, or a combination of metaheuristics enables effective exploration of the Soft CSP solution space to find optimal or near-optimal solutions, even in complex problems where exact methods may be too slow or impractical. Other metaheuristics, such as local beam search or Bees algorithms, have been employed in similar optimization problems for relief distribution or generalized resource assignment.
+
+    \item \textbf{Intelligent Agent:} To integrate the techniques mentioned above and interact with the dynamic environment, the framework is based on an Intelligent Agent. An intelligent agent is a system that perceives its environment, makes decisions, and acts to achieve its goals. In our context, the agent:
+          \begin{itemize}
+              \item \textbf{Perceives:} It gathers data from various sources, including climate data (forecasts, ongoing events), socioeconomic data (population vulnerabilities, current needs), and field data (logistics conditions, shelter capacities). Data collection in emergency contexts includes socioeconomic information for affected areas and distance matrices. The parameters used to identify priority areas include population, area, per capita income, property value, and factors such as drainage, urbanization, and civic services. Distance matrices can be generated using scalable maps or GIS systems.
+              \item \textbf{Updates:} It dynamically adapts the Soft CSP model based on perceived condition changes. If a new weather alert or post-event damage assessment indicates increased risk in a certain area, the Soft constraints (e.g., priorities) are modified. If resource availability or logistics capacity changes, the Hard constraints are updated.
+              \item \textbf{Solves:} It uses optimization algorithms (GA/SA) to find the optimal or near-optimal solution for the updated Soft CSP.
+              \item \textbf{Acts:} It issues resource allocation decisions in the form of operational recommendations. These decisions guide aid dispatching, shelter opening, cash transfer assignments, etc.
+          \end{itemize}
+          The agent’s architecture includes abilities, prior knowledge, goals, stimuli (current and past), and a belief state used to select actions. Transduction, which maps percepts to commands, can be implemented via a controller. A hierarchical approach to controllers can make the system faster. The agent maintains a belief state that encodes the history of percepts.
+\end{enumerate}
+
+\section{Proposed Application Project: Scenario in the Brazilian Semi-Arid Region}
+To illustrate the application of the proposed framework, we present a scenario based on the geographic region of the Brazilian semi-arid. This area is particularly relevant as it is among the most vulnerable in the country to socioeconomic and climatic shocks, especially droughts (``seca/estiagem''), and is a primary target of food security-based social protection programs.
+
+\begin{itemize}
+    \item \textbf{Domain:} The application focuses on the allocation of social protection resources specific to this context, such as food aid (e.g., food kits, access to food through programs like PAA and PNAE), financial transfers (such as the Bolsa Família Program, as referenced), and temporary shelters in the event of extreme events.
+
+    \item \textbf{Model:} An Adaptive Soft CSP is developed for this domain.
+          \begin{itemize}
+              \item \textbf{Variables:} Decision variables may include: the percentage of the eligible population in each municipality that receives cash transfers; the amount of food (in tons) distributed to each logistics center; or which schools serve as temporary shelters and at what capacity.
+              \item \textbf{Domains:} Variable domains depend on the type of resource (e.g., quantity, binary values for shelter opening/closing).
+              \item \textbf{Hard Constraints:} Total available budget for social protection programs; storage and distribution capacities of logistics centers; maximum capacity of temporary shelters; availability of vehicles and transportation limits; eligibility criteria for accessing programs (e.g., income levels, risk exposure).
+              \item \textbf{Soft Constraints:} Fairness in the distribution of resources across communities (e.g., minimizing disparities in per capita support, ensuring that poorer areas receive proportionate support based on their vulnerability); logistical efficiency (e.g., minimizing total transportation costs or total time to reach the most vulnerable populations); priorities based on current and forecasted risks of drought or flooding, which may rely on climate event probabilities and socioeconomic vulnerability indices.
+          \end{itemize}
+
+    \item \textbf{Intelligent Agent:} A smart agent continuously monitors the environment.
+          \begin{itemize}
+              \item \textbf{Perception:} The agent gathers data on climate forecasts (e.g., probability of drought over the coming months, predicted rainfall intensity), updated socioeconomic indicators (e.g., localized poverty indices, local food prices, employment statistics), and real-time logistical information (e.g., road conditions, vehicle availability, inventory levels in warehouses). Continuous perception is crucial due to the dynamic nature of climate risks.
+              \item \textbf{Update:} Based on perceived data, the agent updates the Soft CSP. For instance, deteriorating drought forecasts for a sub-region may increase the priority (soft constraint) for food aid delivery to that area. Unexpected increases in fuel costs may impact both hard and soft constraints related to transportation.
+              \item \textbf{Resolution:} The agent runs optimization algorithms (e.g., GA or SA) to determine the best allocation of resources given the updated Soft CSP.
+              \item \textbf{Action:} It generates specific operational recommendations, such as: ``Allocate X units of resource Y to community Z, using logistics route W''.
+          \end{itemize}
+
+    \item \textbf{Fairness and Adaptability:} Fairness is explicitly modeled through soft constraints and the CSP’s objective functions. Adaptability is ensured by the continuous update of the model based on new data and the periodic resolution of the CSP, allowing timely and informed responses to evolving risks and needs. The capacity to adapt social protection programs to climatic variability and production cycles represents a key innovation.
+\end{itemize}
+
+This application scenario in the Brazilian semi-arid region provides a concrete context for testing and validating the effectiveness of the proposed framework in addressing the complexities of adaptive and equitable allocation of social protection resources in response to dynamic climate risks.
+
+\section{Conclusions}
+The integration of social protection (SP) and climate change adaptation (CCA) is widely recognized as essential for enhancing the resilience of vulnerable populations in the face of increasing threats posed by climate change. However, the current fragmentation between SP and CCA policies significantly limits the effectiveness of response strategies.
+
+This project proposes an Artificial Intelligence-based approach employing an Adaptive Soft Constraint Satisfaction Problem (CSP) framework, metaheuristic optimization algorithms (such as Genetic Algorithms and Simulated Annealing), and an Intelligent Agent to address this challenge. This approach enables the development of dynamic, fair, and efficient decision-support tools, overcoming the limitations of allocation methods based solely on the status quo or political discretion.
+
+The benefits of the proposed model include:
+\begin{itemize}
+    \item \textbf{Evidence-based decision-making:} Resource allocation is grounded in rigorous data analysis and constraint evaluation.
+    \item \textbf{Complexity management:} The framework is designed to handle the high number of interdependent variables and constraints typical of large-scale allocation problems.
+    \item \textbf{Explicitly modeled fairness:} Concerns regarding distributive justice are formally integrated into the decision-making process through soft constraints.
+    \item \textbf{Adaptability to dynamic contexts:} The ability to update the model in real time in response to environmental and socioeconomic changes is crucial in volatile climate scenarios.
+    \item \textbf{Transparency in decision-making:} The model-driven process offers increased clarity and traceability compared to less structured methods.
+    \item \textbf{Scenario simulation:} The model can be used to simulate the impact of different allocation policies or future climate scenarios, supporting strategic planning.
+\end{itemize}
+
+Implementing such a system would require the development of robust infrastructures for data collection and integration (including climatic, socioeconomic, and logistical data). Lessons from relief distribution modeling emphasize the need for comprehensive databases and geographic information systems. Future research should focus on detailing the practical implementation steps of the model, addressing uncertainty in input parameters (potentially through robust or fuzzy approaches), and fully integrating the system into pre-disaster planning phases.
+
+Despite existing challenges, the proposed AI-driven approach offers a promising path toward significantly improving the effectiveness and fairness of social protection systems in safeguarding the most vulnerable populations against the threats of climate change.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
 \end{document}
